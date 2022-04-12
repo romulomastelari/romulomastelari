@@ -1,0 +1,13 @@
+<!-- ngClass uma diretiva do angular para controle de classe CSS, como se fosse um IF se mostraMenu está true aparece a div se não, não. -->
+<div [ngClass]="{ 'active-menu': mostraMenu }">
+  <div class="menu-bar">
+    <i
+      class="fa fa-window-close"
+      (click)="abreMenu()"
+      (keyup.Space)="abreMenu()"
+    ></i>
+    <ng-content></ng-content>
+  </div>
+
+  <div class="overlay" (click)="abreMenu()"></div>
+</div>

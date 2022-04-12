@@ -1,0 +1,46 @@
+<header class="sticky-top">
+  <nav class="navbar navbar-light bg-white">
+    <a class="navbar-brand">
+      <button class="reset-button" (click)="goToHome()">
+        <img
+        class="rounded float-left"
+        src="assets/img/logo.jpg"
+        alt="Logo do GatitoBook"
+        height="130"
+        (click)="goToHome()"
+        />
+        <i class="menuz fa fa-bars mr-3" (click)="menu.abreMenu()"></i>
+      </button>
+    </a>
+
+    <app-menu #menu>
+      <ul class="list-unstyled">
+        <li>
+          <a [routerLink]="['animais', 'novo']">Novo animal</a>
+        </li>
+      </ul>
+    </app-menu>
+
+    <form *ngIf="showRoutes()" class="form-inline my-2 my-lg-0">
+      <div *ngIf="user$ | async as user">
+        <div *ngIf="user.name; else login">
+          <i class="fa fa-user-circle mr-1"></i>
+          <a >{{ user.name }}</a>
+          <button (click)="logout()" class="cta">
+            <span>Logout</span>
+            <svg width="10px" height="5px" viewBox="0 0 13 10">
+              <path d="M1,5 L11,5"></path>
+              <polyline points="8 1 12 5 8 9"></polyline>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </form>
+  </nav>
+
+  <ng-template #login>
+    <span class="navbar-text">
+      <!-- <a [routerLink]="['']">Logar</a> -->
+    </span>
+  </ng-template>
+</header>

@@ -1,0 +1,10 @@
+.card {
+  transition: box-shadow 0.25s ease-in-out,
+               transform 0.25s ease-in-out;
+ }
+
+ .card:hover {
+  box-shadow: -10.275px -10.275px var(--color-1),
+               15.4px 10.275px var(--color-2);
+  transform: scale(1.025);
+ }

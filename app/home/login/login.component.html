@@ -1,0 +1,80 @@
+<div class="border border-3 rounded">
+  <div class="logo mx-2 my-2">
+    <br />
+    <div
+      class="icon d-flex align-items-center justify-content-center border border-4"
+    >
+      <span class="fa fa-user-o"></span>
+    </div>
+    <div class="mx-3 my-3">
+      <h4 class="text-center">Login</h4>
+
+      <form class="form mt-4" (ngSubmit)="login()" #loginForm="ngForm">
+        <div class="form-group">
+          <input
+            class="form-control"
+            placeholder="Nome do usuário"
+            [(ngModel)]="usuario"
+            name="usuario"
+            #campoUsuario="ngModel"
+            required
+          />
+          <app-mensagem
+            *ngIf="campoUsuario.invalid && campoUsuario.touched"
+            mensagem="Usuário obrigatório"
+          ></app-mensagem>
+        </div>
+
+        <div class="form-group">
+          <input
+            type="password"
+            class="form-control"
+            placeholder="Senha"
+            [(ngModel)]="senha"
+            name="senha"
+            #campoSenha="ngModel"
+            required
+          />
+          <app-mensagem
+            *ngIf="campoSenha.invalid && campoSenha.touched"
+            mensagem="Senha obrigatória"
+          ></app-mensagem>
+        </div>
+
+        <button
+          type="submit"
+          class="btn btn-primary btn-block"
+          [disabled]="loginForm.invalid"
+        >
+          Login
+        </button>
+      </form>
+
+      <p>
+        Não é um usuário?
+        <a [routerLink]="['novousuario']">Se cadastre!</a>
+      </p>
+
+      <br />
+
+      <div>
+        <div class="login_wrapper">
+          <div class="row">
+            <div class="col-lg-6 col-md-6 col-xs-12 col-sm-6">
+              <a href="#" class="btn btn-primary facebook">
+                <span>Login com Facebook</span>
+                <i class="fa fa-facebook"></i>
+              </a>
+            </div>
+            <div class="col-lg-6 col-md-6 col-xs-12 col-sm-6">
+              <a href="#" class="btn btn-primary google-plus">
+                Login com Google
+                <i class="fa fa-google-plus"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
