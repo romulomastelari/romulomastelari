@@ -1,4 +1,4 @@
-## Oiii eu sou a Romulo Mastelari, desenvolvedor frontend.
+## Oiii eu sou o Romulo Mastelari, desenvolvedor frontend.
 <div align="center">
   <a href="https://github.com/romulomastelari">
   <img height="180em" src="https://github-readme-stats.vercel.app/api?username=romulomastelari&show_icons=true&theme=github_dark&include_all_commits=true&count_private=true"/>
